@@ -1,7 +1,10 @@
+import Header from "./comopnents/Header";
+import "./global.css";
+
 function App() {
   return (
     <>
-      <h1>Hello Ignite</h1>
+      <Header />
     </>
   );
 }
