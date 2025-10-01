@@ -4,8 +4,8 @@ import { IgniteLogo } from "./IgniteLogo";
 export default function Header() {
   return (
     <header className={styles.header}>
-      <IgniteLogo />
-      <h1>Ignite Feed</h1>
+      <IgniteLogo className={styles.logo} />
+      <h1 className={styles.title}>Ignite Feed</h1>
     </header>
   );
 }
