@@ -10,6 +10,12 @@ export default function Sidebar() {
       />
 
       <div className={Styles.profile}>
+        <img
+          src="https://github.com/igortuag.png"
+          alt="Igor Tuag"
+          className={Styles.avatar}
+        />
+
         <strong>Igor Tuag</strong>
         <span>Software Engineer</span>
       </div>
