@@ -55,10 +55,12 @@
   font-weight: bold;
   text-decoration: none;
 
-  transition: background-color 0.2s, color 0.2s;
+  transition: background-color 0.1s, color 0.1s;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  gap: 0.5rem;
 }
 
 .sidebar footer a:hover {

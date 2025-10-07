@@ -24,7 +24,7 @@ export default function Sidebar() {
 
       <footer>
         <a href="#">
-          <PencilLine />
+          <PencilLine size={20} />
           Edit profile
         </a>
       </footer>
