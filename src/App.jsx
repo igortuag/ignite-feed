@@ -14,14 +14,28 @@ function App() {
         <Sidebar />
         <main>
           <Post
-            author="John Doe"
-            content="This is a sample post content."
-            publishedAt="2023-10-01"
+            author={{
+              name: "John Doe",
+              avatarUrl: "https://example.com/avatar1.png",
+              role: "Developer",
+            }}
+            content={[
+              { type: "paragraph", content: "This is a sample post content." },
+              { type: "link", content: "https://example.com" },
+            ]}
+            publishedAt={new Date("2023-10-01")}
           />
           <Post
-            author="Jane Smith"
-            content="Another post content goes here."
-            publishedAt="2023-10-02"
+            author={{
+              name: "Jane Smith",
+              avatarUrl: "https://example.com/avatar2.png",
+              role: "Designer",
+            }}
+            content={[
+              { type: "paragraph", content: "Another post content goes here." },
+              { type: "link", content: "https://example.com" },
+            ]}
+            publishedAt={new Date("2023-10-02")}
           />
         </main>
       </div>
