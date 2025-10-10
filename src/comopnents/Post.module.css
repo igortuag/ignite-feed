@@ -1,7 +1,9 @@
 .post {
-  border: 1px solid #ccc;
-  padding: 16px;
-  margin-bottom: 16px;
+  background: var(--gray-800);
   border-radius: 8px;
-  background-color: #fff;
+  padding: 2.5rem;
+}
+
+.post + .post {
+  margin-top: 2rem;
 }
