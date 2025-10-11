@@ -7,3 +7,23 @@
 .post + .post {
   margin-top: 2rem;
 }
+
+.content {
+  line-height: 1.6;
+  color: var(--gray-300);
+  margin-top: 1.5rem;
+}
+
+.content p {
+  margin-top: 1rem;
+}
+
+.content p a {
+  color: var(--green-500);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.content a:hover {
+  color: var(--gray-300);
+}
