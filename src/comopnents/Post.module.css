@@ -27,3 +27,9 @@
 .content a:hover {
   color: var(--gray-300);
 }
+
+.post > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
