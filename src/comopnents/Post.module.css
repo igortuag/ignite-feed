@@ -33,3 +33,19 @@
   align-items: center;
   justify-content: space-between;
 }
+
+.post > header time {
+  font-size: 0.875rem;
+  color: var(--gray-400);
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.authorInfo {
+  display: flex;
+  flex-direction: column;
+}
