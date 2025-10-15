@@ -47,6 +47,14 @@ export default function Post({ author, content, publishedAt }) {
           return null;
         })}
       </div>
+
+      <form className={Styles.commentForm}>
+        <strong>Leave your feedback</strong>
+        <textarea placeholder="Write a comment..." />
+        <footer>
+          <button type="submit">Post Comment</button>
+        </footer>
+      </form>
     </article>
   );
 }
