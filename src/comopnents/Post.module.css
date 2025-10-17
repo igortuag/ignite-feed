@@ -93,3 +93,19 @@
   line-height: 1.4;
   margin-top: 1rem;
 }
+
+.commentForm button[type="submit"] {
+  margin-top: 1rem;
+  padding: 1rem 1.5rem;
+  background: var(--green-500);
+  color: var(--white);
+  border: 0;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.commentForm button[type="submit"]:hover {
+  background: var(--green-300);
+}
