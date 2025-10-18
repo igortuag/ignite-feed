@@ -94,6 +94,17 @@
   margin-top: 1rem;
 }
 
+.footer {
+  visibility: hidden;
+  max-height: 0;
+}
+
+.commentForm textarea:focus + .footer,
+.commentForm textarea:not(:placeholder-shown) + .footer {
+  visibility: visible;
+  max-height: none;
+}
+
 .commentForm button[type="submit"] {
   margin-top: 1rem;
   padding: 1rem 1.5rem;
