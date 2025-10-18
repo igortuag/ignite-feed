@@ -51,7 +51,7 @@ export default function Post({ author, content, publishedAt }) {
       <form className={Styles.commentForm}>
         <strong>Leave your feedback</strong>
         <textarea placeholder="Write a comment..." />
-        <footer>
+        <footer className={Styles.footer}>
           <button type="submit">Post Comment</button>
         </footer>
       </form>
