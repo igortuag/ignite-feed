@@ -55,6 +55,12 @@ export default function Post({ author, content, publishedAt }) {
           <button type="submit">Post Comment</button>
         </footer>
       </form>
+
+      <div className={Styles.commentList}>
+        <Comment />
+        <Comment />
+        <Comment />
+      </div>
     </article>
   );
 }
