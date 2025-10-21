@@ -4,3 +4,25 @@
   border-radius: 5px;
   background-color: #f9f9f9;
 }
+
+.comment > img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 8px;
+}
+
+.commentBox {
+  flex: 1;
+}
+
+.commentContent {
+  background-color: var(--gray-700);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.commentContent header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
