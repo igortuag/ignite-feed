@@ -49,3 +49,7 @@
   line-height: 0;
   transition: color 0.1s;
 }
+
+.commentContent header button:hover {
+  color: var(--red-500);
+}
