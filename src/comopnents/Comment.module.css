@@ -23,7 +23,7 @@
 
 .commentContent header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
 }
 
@@ -52,4 +52,27 @@
 
 .commentContent header button:hover {
   color: var(--red-500);
+}
+
+.commentContent p {
+  margin-top: 1rem;
+  color: var(--gray-300);
+}
+
+.commentContent footer {
+  margin-top: 1rem;
+}
+
+.commentContent footer button {
+  background: transparent;
+  border: none;
+  color: var(--gray-400);
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+}
+
+.commentContent footer button:hover {
+  color: var(--green-300);
 }
