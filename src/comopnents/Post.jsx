@@ -1,3 +1,4 @@
+import { Avatar } from "./Avatar";
 import Styles from "./Post.module.css";
 
 export default function Post({ author, content, publishedAt }) {
@@ -5,11 +6,7 @@ export default function Post({ author, content, publishedAt }) {
     <article className={Styles.post}>
       <header>
         <div className={Styles.author}>
-          <img
-            className={Styles.avatar}
-            src={author.avatarUrl}
-            alt={author.name}
-          />
+          <Avatar src={author.avatarUrl} alt={author.name} />
           <div className={Styles.authorInfo}>
             <strong>{author.name}</strong>
             <span>{author.role}</span>
