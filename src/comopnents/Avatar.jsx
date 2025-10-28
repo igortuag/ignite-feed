@@ -1,11 +1,13 @@
 import Styles from "./Sidebar.module.css";
 
-export const Avatar = ({ src, alt, size = 50 }) => {
+export const Avatar = ({ src, alt, hasBorder = true, size = 50 }) => {
   return (
     <img
       src={src}
       alt={alt}
-      className={Styles.avatar}
+      className={
+        hasBorder ? Styles.avatarWithBorder : Styles.avatarWithoutBorder
+      }
       style={{ width: size, height: size }}
     />
   );
