@@ -1,7 +1,13 @@
+import { formatDate } from "date-fns";
 import { Avatar } from "./Avatar";
 import Styles from "./Post.module.css";
 
 export default function Post({ author, content, publishedAt }) {
+  const publishedDateFormatted = formatDate(
+    publishedAt,
+    "MMMM dd, yyyy 'at' HH:mm"
+  );
+
   return (
     <article className={Styles.post}>
       <header>
@@ -15,11 +21,7 @@ export default function Post({ author, content, publishedAt }) {
             className={Styles.publishedAt}
             dateTime={publishedAt.toISOString()}
           >
-            {publishedAt.toLocaleDateString("en-US", {
-              day: "2-digit",
-              month: "long",
-              year: "numeric",
-            })}
+            {publishedDateFormatted}
           </time>
         </div>
       </header>
