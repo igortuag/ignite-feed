@@ -1,8 +1,34 @@
 import { formatDate } from "date-fns";
 import { Avatar } from "./Avatar";
 import Styles from "./Post.module.css";
+import { useState } from "react";
+
+const COMMENTS_MOCK = [
+  {
+    id: 1,
+    author: {
+      name: "John Doe",
+      avatarUrl: "https://example.com/avatar1.jpg",
+      role: "Developer"
+    },
+    content: "This is a comment.",
+    publishedAt: new Date("2023-03-01T10:00:00Z")
+  },
+  {
+    id: 2,
+    author: {
+      name: "Jane Smith",
+      avatarUrl: "https://example.com/avatar2.jpg",
+      role: "Designer"
+    },
+    content: "This is another comment.",
+    publishedAt: new Date("2023-03-02T12:00:00Z")
+  }
+];
 
 export default function Post({ author, content, publishedAt }) {
+  const [comments, setComments] = useState(COMMENTS_MOCK);
+
   const publishedDateFormatted = formatDate(
     publishedAt,
     "MMMM dd, yyyy 'at' HH:mm"
@@ -56,9 +82,9 @@ export default function Post({ author, content, publishedAt }) {
       </form>
 
       <div className={Styles.commentList}>
-        <Comment />
-        <Comment />
-        <Comment />
+        {comments.map((comment) => (
+          <Comment key={comment.id} comment={comment} />
+        ))}
       </div>
     </article>
   );
