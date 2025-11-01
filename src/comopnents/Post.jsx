@@ -34,6 +34,24 @@ export default function Post({ author, content, publishedAt }) {
     "MMMM dd, yyyy 'at' HH:mm"
   );
 
+  function handleCreateNewComment(event) {
+    event.preventDefault();
+    const newCommentContent = event.target.elements[0].value;
+
+    const newComment = {
+      id: comments.length + 1,
+      author: {
+        name: "Current User",
+        avatarUrl: "https://example.com/current-user-avatar.jpg",
+        role: "User"
+      },
+      content: newCommentContent,
+      publishedAt: new Date()
+    };
+
+    setComments([...comments, newComment]);
+  }
+
   return (
     <article className={Styles.post}>
       <header>
@@ -73,7 +91,7 @@ export default function Post({ author, content, publishedAt }) {
         })}
       </div>
 
-      <form className={Styles.commentForm}>
+      <form onSubmit={handleCreateNewComment} className={Styles.commentForm}>
         <strong>Leave your feedback</strong>
         <textarea placeholder="Write a comment..." />
         <footer className={Styles.footer}>
