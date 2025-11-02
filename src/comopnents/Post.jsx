@@ -2,6 +2,7 @@ import { formatDate } from "date-fns";
 import { Avatar } from "./Avatar";
 import Styles from "./Post.module.css";
 import { useState } from "react";
+import { Comment } from "./Comment";
 
 const COMMENTS_MOCK = [
   {
