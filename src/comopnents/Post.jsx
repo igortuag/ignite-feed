@@ -30,15 +30,19 @@ const COMMENTS_MOCK = [
 export default function Post({ author, content, publishedAt }) {
   const [comments, setComments] = useState(COMMENTS_MOCK);
 
+  const [newCommentText, setNewCommentText] = useState("");
+
   const publishedDateFormatted = formatDate(
     publishedAt,
     "MMMM dd, yyyy 'at' HH:mm"
   );
 
+  function handleNewCommentText(event) {
+    setNewCommentText(event.target.value);
+  }
+
   function handleCreateNewComment(event) {
     event.preventDefault();
-    const newCommentContent = event.target.elements[0].value;
-
     const newComment = {
       id: comments.length + 1,
       author: {
@@ -46,11 +50,13 @@ export default function Post({ author, content, publishedAt }) {
         avatarUrl: "https://example.com/current-user-avatar.jpg",
         role: "User"
       },
-      content: newCommentContent,
+      content: newCommentText,
       publishedAt: new Date()
     };
 
     setComments([...comments, newComment]);
+
+    setNewCommentText("");
   }
 
   return (
@@ -94,7 +100,11 @@ export default function Post({ author, content, publishedAt }) {
 
       <form onSubmit={handleCreateNewComment} className={Styles.commentForm}>
         <strong>Leave your feedback</strong>
-        <textarea placeholder="Write a comment..." />
+        <textarea
+          placeholder="Write a comment..."
+          value={newCommentText}
+          onChange={handleNewCommentText}
+        />
         <footer className={Styles.footer}>
           <button type="submit">Post Comment</button>
         </footer>
