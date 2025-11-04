@@ -14,8 +14,8 @@ const POSTS_MOCK = [
       role: "Developer"
     },
     content: [
-      { type: "paragraph", content: "This is a sample post content." },
-      { type: "link", content: "https://example.com" }
+      { id: 1, type: "paragraph", content: "This is a sample post content." },
+      { id: 2, type: "link", content: "https://example.com" }
     ],
     publishedAt: new Date("2023-10-01")
   },
@@ -27,8 +27,8 @@ const POSTS_MOCK = [
       role: "Designer"
     },
     content: [
-      { type: "paragraph", content: "Another post content goes here." },
-      { type: "link", content: "https://example.com" }
+      { id: 3, type: "paragraph", content: "Another post content goes here." },
+      { id: 4, type: "link", content: "https://example.com" }
     ],
     publishedAt: new Date("2023-10-02")
   }

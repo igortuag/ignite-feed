@@ -78,12 +78,12 @@ export default function Post({ author, content, publishedAt }) {
       </header>
 
       <div className={Styles.content}>
-        {content.map((item, index) => {
+        {content.map((item) => {
           if (item.type === "paragraph") {
-            return <p key={index}>{item.content}</p>;
+            return <p key={item.id}>{item.content}</p>;
           } else if (item.type === "link") {
             return (
-              <p key={index}>
+              <p key={item.id}>
                 <a
                   href={item.content}
                   target="_blank"
