@@ -59,6 +59,10 @@ export default function Post({ author, content, publishedAt }) {
     setNewCommentText("");
   }
 
+  function handleNewCommentInvalid(event) {
+    event.target.setCustomValidity("This field is required!");
+  }
+
   function deleteComment(commentId) {
     const updatedComments = comments.filter(
       (comment) => comment.id !== commentId
@@ -111,6 +115,8 @@ export default function Post({ author, content, publishedAt }) {
           placeholder="Write a comment..."
           value={newCommentText}
           onChange={handleNewCommentText}
+          onInvalid={handleNewCommentInvalid}
+          required
         />
         <footer className={Styles.footer}>
           <button type="submit">Post Comment</button>
