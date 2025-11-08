@@ -39,6 +39,8 @@ export default function Post({ author, content, publishedAt }) {
 
   function handleNewCommentText(event) {
     setNewCommentText(event.target.value);
+
+    event.target.setCustomValidity("");
   }
 
   function handleCreateNewComment(event) {
@@ -119,7 +121,9 @@ export default function Post({ author, content, publishedAt }) {
           required
         />
         <footer className={Styles.footer}>
-          <button type="submit">Post Comment</button>
+          <button type="submit" disabled={newCommentText.length === 0}>
+            Post Comment
+          </button>
         </footer>
       </form>
 
