@@ -27,7 +27,19 @@ const COMMENTS_MOCK = [
   }
 ];
 
-export default function Post({ author, content, publishedAt }) {
+interface Author {
+  name: string;
+  avatarUrl: string;
+  role: string;
+}
+
+interface PostProps {
+  author: Author;
+  content: { id: number; type: string; content: string }[];
+  publishedAt: Date;
+}
+
+export default function Post({ author, content, publishedAt }: PostProps) {
   const [comments, setComments] = useState(COMMENTS_MOCK);
 
   const [newCommentText, setNewCommentText] = useState("");
@@ -37,13 +49,13 @@ export default function Post({ author, content, publishedAt }) {
     "MMMM dd, yyyy 'at' HH:mm"
   );
 
-  function handleNewCommentText(event) {
+  function handleNewCommentText(event: React.ChangeEvent<HTMLTextAreaElement>) {
     setNewCommentText(event.target.value);
 
     event.target.setCustomValidity("");
   }
 
-  function handleCreateNewComment(event) {
+  function handleCreateNewComment(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const newComment = {
       id: comments.length + 1,
@@ -61,11 +73,13 @@ export default function Post({ author, content, publishedAt }) {
     setNewCommentText("");
   }
 
-  function handleNewCommentInvalid(event) {
+  function handleNewCommentInvalid(
+    event: React.InvalidEvent<HTMLTextAreaElement>
+  ) {
     event.target.setCustomValidity("This field is required!");
   }
 
-  function deleteComment(commentId) {
+  function deleteComment(commentId: number) {
     const updatedComments = comments.filter(
       (comment) => comment.id !== commentId
     );
