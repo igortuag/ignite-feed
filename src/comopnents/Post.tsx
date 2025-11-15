@@ -147,8 +147,10 @@ export default function Post({ author, content, publishedAt }: PostProps) {
         {comments.map((comment) => (
           <Comment
             key={comment.id}
-            comment={comment}
-            onDeleteComment={deleteComment}
+            content={comment.content}
+            author={comment.author}
+            publishedAt={comment.publishedAt}
+            onDeleteComment={() => deleteComment(comment.id)}
           />
         ))}
       </div>
