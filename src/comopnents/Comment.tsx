@@ -2,8 +2,24 @@ import { ThumbsUp, Trash } from "phosphor-react";
 import Style from "./Comment.module.css";
 import { Avatar } from "./Avatar";
 import { useState } from "react";
+import { formatDistanceToNow } from "date-fns";
 
-export function Comment({ content, author, publishedAt, onDeleteComment }) {
+interface CommentProps {
+  content: string;
+  author: {
+    name: string;
+    avatarUrl: string;
+  };
+  publishedAt: Date;
+  onDeleteComment: () => void;
+}
+
+export function Comment({
+  content,
+  author,
+  publishedAt,
+  onDeleteComment
+}: CommentProps) {
   const [likeCount, setLikeCount] = useState(0);
 
   function handleLikeComment() {
