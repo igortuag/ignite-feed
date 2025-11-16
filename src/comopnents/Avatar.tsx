@@ -1,6 +1,18 @@
 import Styles from "./Sidebar.module.css";
 
-export const Avatar = ({ src, alt, hasBorder = true, size = 50 }) => {
+interface AvatarProps {
+  hasBorder?: boolean;
+  alt?: string;
+  src: string;
+  size?: number;
+}
+
+export const Avatar = ({
+  src,
+  alt,
+  hasBorder = true,
+  size = 50
+}: AvatarProps) => {
   return (
     <img
       src={src}
