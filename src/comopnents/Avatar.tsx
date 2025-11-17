@@ -1,22 +1,18 @@
 import Styles from "./Sidebar.module.css";
 
-interface AvatarProps {
+interface AvatarProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   hasBorder?: boolean;
-  alt?: string;
-  src: string;
   size?: number;
 }
 
 export const Avatar = ({
-  src,
-  alt,
   hasBorder = true,
-  size = 50
+  size = 50,
+  ...props
 }: AvatarProps) => {
   return (
     <img
-      src={src}
-      alt={alt}
+      {...props}
       className={
         hasBorder ? Styles.avatarWithBorder : Styles.avatarWithoutBorder
       }
