@@ -1,4 +1,6 @@
-export function IgniteLogo(props) {
+type Props = React.SVGProps<SVGSVGElement>;
+
+export function IgniteLogo(props: Props) {
   return (
     <svg
       width="65"
